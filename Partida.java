@@ -46,7 +46,5 @@ public class Partida{
 
     public static void iniciarPartida(Tablero tablero){
         int contadorTurno = 1;
-
-        
     }
 }
