@@ -16,7 +16,48 @@ public class Tablero{
 
     public String comprobarGanador(){
         String ganador = null; 
-        //TO-DO
+        
+         //Comprobacion posiciones horizontal
+        if (tablero[0][0] != "0" && tablero[0][0].equals(tablero[0][1]) && tablero[0][0].equals(tablero[0][2])){
+            return tablero[0][0];
+        }
+
+        else if (tablero[1][0] != "0" && tablero[1][0].equals(tablero[1][1]) && tablero[1][0].equals(tablero[1][2])){
+            return tablero[1][0];
+        
+        }
+
+        else if (tablero[2][0] != "0" && tablero[2][0].equals(tablero[2][1]) && tablero[2][0].equals(tablero[2][2])){
+            return tablero[0][0];
+        }
+
+        //Comprobacion posiciones vertical
+        for (int i = 0; i <= 2; i++){ 
+            if (tablero[0][i] != "0"){
+                if (tablero[1][i].equals(tablero[0][i]) && tablero[2][i].equals(tablero[0][i])){
+                    return tablero[0][i];
+                }
+            }
+        }
+
+        //Comprobacion posiciones diagonal
+        if (tablero[0][0] != "0" && tablero[1][1].equals(tablero[0][0]) && tablero[2][2].equals(tablero[0][0])){
+            return tablero[0][0];
+        }
+
+        if (tablero[0][2] != "0" && tablero[1][1] == tablero[0][2] && tablero[2][0] == tablero[0][2]){
+            return tablero[0][2];
+        }
+
+        //Nadie ha ganado
+        for (int i = 0; i <= tablero.length; i++){
+            for (int j = 0; j <= tablero[i].length; j++){
+                if (tablero[i][j] != "0"){
+                    return null;
+                }
+            }
+        }
+
         return ganador;
     }
 
